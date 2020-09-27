@@ -15,7 +15,7 @@ func newDeck() deck {
 	cards := deck{}
 
 	suits := "♦︎,♥︎,♣︎,♠︎"
-	values := "A,2,3,4,5,6,7,8,9,J,Q,K"
+	values := "A,2,3,4,5,6,7,8,9,10,J,Q,K"
 	cardSuits := strings.Split(suits, ",")
 	cardValues := strings.Split(values, ",")
 
@@ -66,4 +66,13 @@ func (d deck) shuffle() {
 	// 	newPosition := rand.Intn(len(d) - 1)
 	// 	d[i], d[newPosition] = d[newPosition], d[i]
 	// }
+}
+
+func Contains(d deck, v string) bool {
+	for _, c := range d {
+		if c == v {
+			return true
+		}
+	}
+	return false
 }

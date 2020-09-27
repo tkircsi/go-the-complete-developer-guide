@@ -1,12 +1,19 @@
 package main
 
+import "fmt"
+
 func main() {
-	cards := newDeck()
-	cards.shuffle()
+	remainingDeck := newDeck()
+	remainingDeck.shuffle()
+	var hand deck
 
-	hand, _ := deal(cards, 5)
-	hand.printf()
-	// hand.saveToFile("hand")
-	// remainingDeck.saveToFile("remdeck")
+	for i := 0; i < 2; i++ {
+		hand, remainingDeck = deal(remainingDeck, 5)
+		fmt.Print("Hand ", i, ": ")
+		hand.printf()
+	}
+	fmt.Println(remainingDeck)
 
+	v := Contains(remainingDeck, "6♠︎")
+	fmt.Println(v)
 }
