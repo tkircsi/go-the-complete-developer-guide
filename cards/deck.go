@@ -68,6 +68,7 @@ func (d deck) shuffle() {
 	// }
 }
 
+// Contains is checks the deck contains v
 func Contains(d deck, v string) bool {
 	for _, c := range d {
 		if c == v {
